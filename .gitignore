@@ -1,0 +1,11 @@
+#OS X
+.DS_Store
+
+#Xcode
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+#Cocoapods
+Pods/
+Podfile.lock

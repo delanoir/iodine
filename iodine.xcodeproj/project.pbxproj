@@ -31,7 +31,6 @@
 		F9B09BDE19D4080D0064732A /* IOViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B09BCA19D4080D0064732A /* IOViewModel.h */; };
 		F9B09BDF19D4080D0064732A /* IOViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BCB19D4080D0064732A /* IOViewModel.m */; };
 		F9B09BE319D409050064732A /* iodine.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F9B09BE119D409050064732A /* iodine.podspec */; };
-		F9B09C0B19D412A90064732A /* ContractTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BAE19D407FB0064732A /* ContractTests.m */; };
 		F9B09C0C19D413110064732A /* IOTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BC319D4080D0064732A /* IOTableViewCellModel.m */; };
 		F9B09C0D19D413130064732A /* IOTableViewHeaderFooterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BC519D4080D0064732A /* IOTableViewHeaderFooterViewModel.m */; };
 		F9B09C0E19D413160064732A /* IOTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BC719D4080D0064732A /* IOTableViewModel.m */; };
@@ -41,6 +40,15 @@
 		F9B09C1219D413200064732A /* IOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BBD19D4080D0064732A /* IOTableViewController.m */; };
 		F9B09C1319D413240064732A /* IOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BC119D4080D0064732A /* IOViewController.m */; };
 		F9B09C1419D413270064732A /* IOTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09BBF19D4080D0064732A /* IOTableViewHeaderFooterView.m */; };
+		F9B09C1919D41D520064732A /* IOTableViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C1819D41D520064732A /* IOTableViewControllerSpec.m */; };
+		F9B09C1B19D41D700064732A /* IOViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C1A19D41D700064732A /* IOViewControllerSpec.m */; };
+		F9B09C1D19D41D7E0064732A /* IOTableViewHeaderFooterViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C1C19D41D7E0064732A /* IOTableViewHeaderFooterViewSpec.m */; };
+		F9B09C1F19D41D870064732A /* IOTableViewCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C1E19D41D870064732A /* IOTableViewCellSpec.m */; };
+		F9B09C2119D41D960064732A /* IOTableViewCellModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C2019D41D960064732A /* IOTableViewCellModelSpec.m */; };
+		F9B09C2319D41DA40064732A /* IOTableViewHeaderFooterViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C2219D41DA40064732A /* IOTableViewHeaderFooterViewModelSpec.m */; };
+		F9B09C2519D41DAC0064732A /* IOTableViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C2419D41DAC0064732A /* IOTableViewModelSpec.m */; };
+		F9B09C2719D41DBC0064732A /* IOTableViewSectionModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C2619D41DBC0064732A /* IOTableViewSectionModelSpec.m */; };
+		F9B09C2919D41DC60064732A /* IOViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B09C2819D41DC60064732A /* IOViewModelSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +59,6 @@
 		F9B09B9F19D407FB0064732A /* iodine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iodine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B09BA319D407FB0064732A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B09BA419D407FB0064732A /* iodine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iodine.h; sourceTree = "<group>"; };
-		F9B09BAE19D407FB0064732A /* ContractTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContractTests.m; sourceTree = "<group>"; };
 		F9B09BB819D4080D0064732A /* IOReusableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReusableViewProtocol.h; sourceTree = "<group>"; };
 		F9B09BB919D4080D0064732A /* IOViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOViewControllerProtocol.h; sourceTree = "<group>"; };
 		F9B09BBA19D4080D0064732A /* IOTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTableViewCell.h; sourceTree = "<group>"; };
@@ -75,6 +82,16 @@
 		F9B09BE119D409050064732A /* iodine.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iodine.podspec; sourceTree = "<group>"; };
 		F9B09C0219D4123A0064732A /* iodineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iodineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B09C0519D4123A0064732A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9B09C1719D41BB00064732A /* iodineTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iodineTests-Prefix.pch"; sourceTree = "<group>"; };
+		F9B09C1819D41D520064732A /* IOTableViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewControllerSpec.m; sourceTree = "<group>"; };
+		F9B09C1A19D41D700064732A /* IOViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOViewControllerSpec.m; sourceTree = "<group>"; };
+		F9B09C1C19D41D7E0064732A /* IOTableViewHeaderFooterViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewHeaderFooterViewSpec.m; sourceTree = "<group>"; };
+		F9B09C1E19D41D870064732A /* IOTableViewCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewCellSpec.m; sourceTree = "<group>"; };
+		F9B09C2019D41D960064732A /* IOTableViewCellModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewCellModelSpec.m; sourceTree = "<group>"; };
+		F9B09C2219D41DA40064732A /* IOTableViewHeaderFooterViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewHeaderFooterViewModelSpec.m; sourceTree = "<group>"; };
+		F9B09C2419D41DAC0064732A /* IOTableViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewModelSpec.m; sourceTree = "<group>"; };
+		F9B09C2619D41DBC0064732A /* IOTableViewSectionModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTableViewSectionModelSpec.m; sourceTree = "<group>"; };
+		F9B09C2819D41DC60064732A /* IOViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOViewModelSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,12 +177,12 @@
 		F9B09BE519D40BF50064732A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F9B09BBA19D4080D0064732A /* IOTableViewCell.h */,
-				F9B09BBB19D4080D0064732A /* IOTableViewCell.m */,
-				F9B09BBC19D4080D0064732A /* IOTableViewController.h */,
-				F9B09BBD19D4080D0064732A /* IOTableViewController.m */,
 				F9B09BC019D4080D0064732A /* IOViewController.h */,
 				F9B09BC119D4080D0064732A /* IOViewController.m */,
+				F9B09BBC19D4080D0064732A /* IOTableViewController.h */,
+				F9B09BBD19D4080D0064732A /* IOTableViewController.m */,
+				F9B09BBA19D4080D0064732A /* IOTableViewCell.h */,
+				F9B09BBB19D4080D0064732A /* IOTableViewCell.m */,
 				F9B09BBE19D4080D0064732A /* IOTableViewHeaderFooterView.h */,
 				F9B09BBF19D4080D0064732A /* IOTableViewHeaderFooterView.m */,
 			);
@@ -175,16 +192,16 @@
 		F9B09BE619D40C0A0064732A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F9B09BC219D4080D0064732A /* IOTableViewCellModel.h */,
-				F9B09BC319D4080D0064732A /* IOTableViewCellModel.m */,
-				F9B09BC419D4080D0064732A /* IOTableViewHeaderFooterViewModel.h */,
-				F9B09BC519D4080D0064732A /* IOTableViewHeaderFooterViewModel.m */,
+				F9B09BCA19D4080D0064732A /* IOViewModel.h */,
+				F9B09BCB19D4080D0064732A /* IOViewModel.m */,
 				F9B09BC619D4080D0064732A /* IOTableViewModel.h */,
 				F9B09BC719D4080D0064732A /* IOTableViewModel.m */,
 				F9B09BC819D4080D0064732A /* IOTableViewSectionModel.h */,
 				F9B09BC919D4080D0064732A /* IOTableViewSectionModel.m */,
-				F9B09BCA19D4080D0064732A /* IOViewModel.h */,
-				F9B09BCB19D4080D0064732A /* IOViewModel.m */,
+				F9B09BC219D4080D0064732A /* IOTableViewCellModel.h */,
+				F9B09BC319D4080D0064732A /* IOTableViewCellModel.m */,
+				F9B09BC419D4080D0064732A /* IOTableViewHeaderFooterViewModel.h */,
+				F9B09BC519D4080D0064732A /* IOTableViewHeaderFooterViewModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -192,7 +209,8 @@
 		F9B09C0319D4123A0064732A /* iodineTests */ = {
 			isa = PBXGroup;
 			children = (
-				F9B09BAE19D407FB0064732A /* ContractTests.m */,
+				F9B09C1619D41B890064732A /* Models */,
+				F9B09C1519D41B830064732A /* Views */,
 				F9B09C0419D4123A0064732A /* Supporting Files */,
 			);
 			path = iodineTests;
@@ -202,8 +220,32 @@
 			isa = PBXGroup;
 			children = (
 				F9B09C0519D4123A0064732A /* Info.plist */,
+				F9B09C1719D41BB00064732A /* iodineTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9B09C1519D41B830064732A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F9B09C1A19D41D700064732A /* IOViewControllerSpec.m */,
+				F9B09C1819D41D520064732A /* IOTableViewControllerSpec.m */,
+				F9B09C1E19D41D870064732A /* IOTableViewCellSpec.m */,
+				F9B09C1C19D41D7E0064732A /* IOTableViewHeaderFooterViewSpec.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F9B09C1619D41B890064732A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F9B09C2819D41DC60064732A /* IOViewModelSpec.m */,
+				F9B09C2419D41DAC0064732A /* IOTableViewModelSpec.m */,
+				F9B09C2619D41DBC0064732A /* IOTableViewSectionModelSpec.m */,
+				F9B09C2019D41D960064732A /* IOTableViewCellModelSpec.m */,
+				F9B09C2219D41DA40064732A /* IOTableViewHeaderFooterViewModelSpec.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,16 +449,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B09C0B19D412A90064732A /* ContractTests.m in Sources */,
+				F9B09C1F19D41D870064732A /* IOTableViewCellSpec.m in Sources */,
+				F9B09C1D19D41D7E0064732A /* IOTableViewHeaderFooterViewSpec.m in Sources */,
 				F9B09C1219D413200064732A /* IOTableViewController.m in Sources */,
 				F9B09C0F19D413180064732A /* IOTableViewSectionModel.m in Sources */,
 				F9B09C1119D4131E0064732A /* IOTableViewCell.m in Sources */,
 				F9B09C1019D4131A0064732A /* IOViewModel.m in Sources */,
+				F9B09C2119D41D960064732A /* IOTableViewCellModelSpec.m in Sources */,
+				F9B09C2719D41DBC0064732A /* IOTableViewSectionModelSpec.m in Sources */,
 				F9B09C1319D413240064732A /* IOViewController.m in Sources */,
+				F9B09C1919D41D520064732A /* IOTableViewControllerSpec.m in Sources */,
 				F9B09C1419D413270064732A /* IOTableViewHeaderFooterView.m in Sources */,
+				F9B09C2319D41DA40064732A /* IOTableViewHeaderFooterViewModelSpec.m in Sources */,
+				F9B09C2919D41DC60064732A /* IOViewModelSpec.m in Sources */,
 				F9B09C0E19D413160064732A /* IOTableViewModel.m in Sources */,
 				F9B09C0D19D413130064732A /* IOTableViewHeaderFooterViewModel.m in Sources */,
 				F9B09C0C19D413110064732A /* IOTableViewCellModel.m in Sources */,
+				F9B09C2519D41DAC0064732A /* IOTableViewModelSpec.m in Sources */,
+				F9B09C1B19D41D700064732A /* IOViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +597,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iodineTests/iodineTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -565,6 +617,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iodineTests/iodineTests-Prefix.pch";
 				INFOPLIST_FILE = iodineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

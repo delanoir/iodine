@@ -11,6 +11,14 @@
 #import "IOTableViewCellModel.h"
 #import "IOTableViewHeaderFooterView.h"
 #import "IOTableViewCell.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+@interface IOTableViewController ()
+
+@property (nonatomic, strong, readwrite) NSMutableSet *registeredCells;
+@property (nonatomic, strong, readwrite) NSMutableSet *registeredSections;
+
+@end
 
 @implementation IOTableViewController
 
@@ -22,25 +30,31 @@
 - (void)setupViews
 {
     [self registerViewsForIdentifiersInModel];
-    
-    self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-    self.tableView.sectionFooterHeight = UITableViewAutomaticDimension;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    self.tableView.estimatedSectionHeaderHeight = 40;
-    self.tableView.estimatedSectionFooterHeight = 40;
-    self.tableView.estimatedRowHeight = 44.0;
 }
 
 - (void)post
 {
-    //Implemented in child
+    [[RACObserve(self, tableView)
+            distinctUntilChanged]
+            subscribeNext:^(id x) {
+                self.registeredSections = [NSMutableSet set];
+                self.registeredCells = [NSMutableSet set];
+            }];
+    
+    [[RACObserve(self, viewModel)
+            distinctUntilChanged]
+            subscribeNext:^(id x) {
+                [self registerViewsForIdentifiersInModel];
+                [self.tableView reloadData];
+            }];
 }
 
 - (instancetype)initWithViewModel:(IOTableViewModel *)viewModel
 {
     self = [self init];
     if (self) {
+        self.registeredSections = [NSMutableSet set];
+        self.registeredCells = [NSMutableSet set];
         _viewModel = viewModel;
         [self pre];
     }
@@ -58,17 +72,20 @@
 - (void)registerViewsForIdentifiersInModel
 {
     NSArray *cellIdentifiers = [self.viewModel.sectionViewModels valueForKeyPath:@"@distinctUnionOfArrays.cellViewModels.cellIdentifier"];
-    for (NSString *cellId in cellIdentifiers) {
+    NSArray *uniqueCellIdentifiers = [cellIdentifiers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT self IN %@", self.registeredCells]];
+    for (NSString *cellId in uniqueCellIdentifiers) {
         [self.tableView registerClass:NSClassFromString(cellId) forCellReuseIdentifier:cellId];
+        [self.registeredCells addObject:cellId];
     }
 
     NSArray *headerFooterIdentifiers = [@[
             [self.viewModel.sectionViewModels valueForKeyPath:@"@distinctUnionOfObjects.headerViewModel.headerFooterIdentifier"],
             [self.viewModel.sectionViewModels valueForKeyPath:@"@distinctUnionOfObjects.footerViewModel.headerFooterIdentifier"]
     ] valueForKeyPath:@"@distinctUnionOfArrays.self"];
-
-    for (NSString *headerFooterId in headerFooterIdentifiers) {
+    NSArray *uniqueHeaderFooterIdentifiers = [headerFooterIdentifiers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT self IN %@", self.registeredSections]];
+    for (NSString *headerFooterId in uniqueHeaderFooterIdentifiers) {
         [self.tableView registerClass:NSClassFromString(headerFooterId) forHeaderFooterViewReuseIdentifier:headerFooterId];
+        [self.registeredSections addObject:headerFooterId];
     }
 }
 

@@ -10,6 +10,6 @@
 
 @interface IOTableViewModel : IOViewModel
 
-@property (nonatomic, strong) NSArray *sectionViewModels;
+@property (nonatomic, strong) NSMutableArray *sectionViewModels;
 
 @end

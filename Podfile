@@ -7,6 +7,7 @@ target 'iodineTests' do
 
     pod 'Specta', '~> 0.2.1'
     pod 'Expecta'
+    pod 'OCMock'
     
     post_install do |installer|
         target = installer.project.targets.find { |t| t.to_s == "Pods-iodineTests-Specta" }

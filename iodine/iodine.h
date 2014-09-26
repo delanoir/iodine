@@ -18,12 +18,13 @@ FOUNDATION_EXPORT const unsigned char iodineVersionString[];
 #import "IOReusableViewProtocol.h"
 #import "IOViewControllerProtocol.h"
 
-#import "IOViewModel.h"
 #import "IOTableViewCell.h"
 #import "IOtableViewController.h"
 #import "IOTableViewHeaderFooterView.h"
 #import "IOViewController.h"
-#import "IOTableViewCellModel.h"
-#import "IOTableViewHeaderFooterViewModel.h"
+
+#import "IOViewModel.h"
 #import "IOTableViewModel.h"
 #import "IOTableViewSectionModel.h"
+#import "IOTableViewCellModel.h"
+#import "IOTableViewHeaderFooterViewModel.h"

@@ -12,7 +12,7 @@
 @interface IOTableViewSectionModel : IOViewModel
 
 @property (nonatomic, strong) IOTableViewHeaderFooterViewModel *headerViewModel;
-@property (nonatomic, strong) NSArray *cellViewModels;
+@property (nonatomic, strong) NSMutableArray *cellViewModels;
 @property (nonatomic, strong) IOTableViewHeaderFooterViewModel *footerViewModel;
 
 @end

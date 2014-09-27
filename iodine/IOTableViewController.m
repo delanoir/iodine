@@ -71,6 +71,10 @@
 
 - (void)registerViewsForIdentifiersInModel
 {
+    if (!self.viewModel) {
+        return;
+    }
+    
     NSArray *cellIdentifiers = [self.viewModel.sectionViewModels valueForKeyPath:@"@distinctUnionOfArrays.cellViewModels.cellIdentifier"];
     NSArray *uniqueCellIdentifiers = [cellIdentifiers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT self IN %@", self.registeredCells]];
     for (NSString *cellId in uniqueCellIdentifiers) {

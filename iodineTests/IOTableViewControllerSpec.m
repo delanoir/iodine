@@ -5,6 +5,8 @@
 #import "IOTableViewCell.h"
 #import "IOTableViewHeaderFooterView.h"
 
+#import "UITableViewMockHelper.h"
+
 @interface IOTableViewController (Private)
 
 @property (nonatomic, strong) NSMutableSet *registeredCells;
@@ -52,23 +54,14 @@ describe(@"works as it should", ^{
     
     tableViewController = [[IOTableViewController alloc] initWithViewModel:tableViewModel];
     
-    id tableViewMock = OCMPartialMock([[UITableView alloc] init]);
-    OCMExpect([tableViewMock reloadData]);
-    OCMExpect([tableViewMock _setViewDelegate:[OCMArg isEqual:tableViewController]]);
-    OCMExpect([tableViewMock _setRefreshControl:nil]);
-    OCMStub([tableViewMock subviews]).andReturn(nil);
-    OCMStub([tableViewMock dataSource]).andReturn(tableViewController);
-    OCMStub([tableViewMock delegate]).andReturn(tableViewController);
+    id tableViewMock = [UITableViewMockHelper tableViewMockWithTableViewController:tableViewController];
     
     tableViewController.tableView = tableViewMock;
     
-    it(@"successfully registered the classes", ^{
-        OCMExpect([tableViewMock registerClass:[OCMArg isEqual:NSClassFromString(@"IOTableViewCell")] forCellReuseIdentifier:[OCMArg isEqual:@"IOTableViewCell"]]);
-        OCMExpect([tableViewMock registerClass:[OCMArg isEqual:NSClassFromString(@"IOTableViewHeaderView")] forHeaderFooterViewReuseIdentifier:[OCMArg isEqual:@"IOTableViewHeaderView"]]);
-        OCMExpect([tableViewMock registerClass:[OCMArg isEqual:NSClassFromString(@"IOTableViewFooterView")] forHeaderFooterViewReuseIdentifier:[OCMArg isEqual:@"IOTableViewFooterView"]]);
-        OCMStub([tableViewMock registerClass:[OCMArg isEqual:NSClassFromString(@"IOTableViewCell")] forCellReuseIdentifier:[OCMArg isEqual:@"IOTableViewCell"]]);
-        OCMStub([tableViewMock registerClass:[OCMArg isEqual:NSClassFromString(@"IOTableViewHeaderView")] forHeaderFooterViewReuseIdentifier:[OCMArg isEqual:@"IOTableViewHeaderView"]]);
-        OCMStub([tableViewMock registerClass:[OCMArg isEqual:NSClassFromString(@"IOTableViewFooterView")] forHeaderFooterViewReuseIdentifier:[OCMArg isEqual:@"IOTableViewFooterView"]]);
+    it(@"successfully registers the classes", ^{
+        [UITableViewMockHelper setupTableViewMock:tableViewMock withCellRegisterMethodsForIdentifier:@"IOTableViewCell"];
+        [UITableViewMockHelper setupTableViewMock:tableViewMock withHeaderFooterRegisterMethodsForIdentifier:@"IOTableViewHeaderView"];
+        [UITableViewMockHelper setupTableViewMock:tableViewMock withHeaderFooterRegisterMethodsForIdentifier:@"IOTableViewFooterView"];
         
         [tableViewController viewDidLoad];
         
@@ -134,6 +127,26 @@ describe(@"works as it should", ^{
                 });
             });
         });
+    });
+    
+    it(@"deregisters classes when replaced with a different view", ^{
+        id tableViewMock1 = [UITableViewMockHelper tableViewMockWithTableViewController:tableViewController];
+        [UITableViewMockHelper setupTableViewMock:tableViewMock1 withCellRegisterMethodsForIdentifier:@"IOTableViewCell"];
+        [UITableViewMockHelper setupTableViewMock:tableViewMock1 withHeaderFooterRegisterMethodsForIdentifier:@"IOTableViewHeaderView"];
+        [UITableViewMockHelper setupTableViewMock:tableViewMock1 withHeaderFooterRegisterMethodsForIdentifier:@"IOTableViewFooterView"];
+        
+        tableViewController.tableView = tableViewMock1;
+        
+        expect([[tableViewController registeredCells] count]).to.equal(0);
+        expect([[tableViewController registeredSections] count]).to.equal(0);
+    });
+    
+    it(@"reregisters cell classes after the view model has been replaced", ^{
+        tableViewController.viewModel = nil;
+        tableViewController.viewModel = tableViewModel;
+        
+        expect([[tableViewController registeredCells] anyObject]).to.equal(@"IOTableViewCell");
+        expect([tableViewController registeredSections]).to.equal([[NSSet alloc] initWithArray:@[@"IOTableViewHeaderView", @"IOTableViewFooterView"]]);
     });
 });
 

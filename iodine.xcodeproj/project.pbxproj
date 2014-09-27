@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		91585C9A030E4F218DAD65FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC1FA18DB6B4C9CB34E945C /* libPods.a */; };
 		A66C04768D774A80B0A68EBA /* libPods-iodineTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD368EB665E14D44988A5814 /* libPods-iodineTests.a */; };
+		F9171D1719D6B4C40040D1AB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F9171D1619D6B4C40040D1AB /* README.md */; };
+		F9171D1C19D6BA5B0040D1AB /* UITableViewMockHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F9171D1B19D6BA5B0040D1AB /* UITableViewMockHelper.m */; };
 		F9B09BA519D407FB0064732A /* iodine.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B09BA419D407FB0064732A /* iodine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9B09BCC19D4080D0064732A /* IOReusableViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B09BB819D4080D0064732A /* IOReusableViewProtocol.h */; };
 		F9B09BCD19D4080D0064732A /* IOViewControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B09BB919D4080D0064732A /* IOViewControllerProtocol.h */; };
@@ -56,6 +58,9 @@
 		C37B6288CD8145588B1C48AD /* Pods-iodineTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iodineTests.xcconfig"; path = "Pods/Pods-iodineTests.xcconfig"; sourceTree = "<group>"; };
 		C553BE49D92F460183D1BE45 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DD368EB665E14D44988A5814 /* libPods-iodineTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iodineTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9171D1619D6B4C40040D1AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F9171D1A19D6BA5B0040D1AB /* UITableViewMockHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewMockHelper.h; sourceTree = "<group>"; };
+		F9171D1B19D6BA5B0040D1AB /* UITableViewMockHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewMockHelper.m; sourceTree = "<group>"; };
 		F9B09B9F19D407FB0064732A /* iodine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iodine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B09BA319D407FB0064732A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B09BA419D407FB0064732A /* iodine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iodine.h; sourceTree = "<group>"; };
@@ -123,6 +128,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F9171D1919D6BA340040D1AB /* UIKit Mock Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F9171D1A19D6BA5B0040D1AB /* UITableViewMockHelper.h */,
+				F9171D1B19D6BA5B0040D1AB /* UITableViewMockHelper.m */,
+			);
+			name = "UIKit Mock Helpers";
+			sourceTree = "<group>";
+		};
 		F9B09B9519D407FB0064732A = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				F9B09BE119D409050064732A /* iodine.podspec */,
+				F9171D1619D6B4C40040D1AB /* README.md */,
 			);
 			name = metadata;
 			sourceTree = "<group>";
@@ -209,6 +224,7 @@
 		F9B09C0319D4123A0064732A /* iodineTests */ = {
 			isa = PBXGroup;
 			children = (
+				F9171D1919D6BA340040D1AB /* UIKit Mock Helpers */,
 				F9B09C1619D41B890064732A /* Models */,
 				F9B09C1519D41B830064732A /* Views */,
 				F9B09C0419D4123A0064732A /* Supporting Files */,
@@ -435,6 +451,7 @@
 			files = (
 				F9B09BD519D4080D0064732A /* IOViewController.m in Sources */,
 				F9B09BCF19D4080D0064732A /* IOTableViewCell.m in Sources */,
+				F9171D1719D6B4C40040D1AB /* README.md in Sources */,
 				F9B09BD719D4080D0064732A /* IOTableViewCellModel.m in Sources */,
 				F9B09BDB19D4080D0064732A /* IOTableViewModel.m in Sources */,
 				F9B09BD119D4080D0064732A /* IOTableViewController.m in Sources */,
@@ -458,6 +475,7 @@
 				F9B09C2119D41D960064732A /* IOTableViewCellModelSpec.m in Sources */,
 				F9B09C2719D41DBC0064732A /* IOTableViewSectionModelSpec.m in Sources */,
 				F9B09C1319D413240064732A /* IOViewController.m in Sources */,
+				F9171D1C19D6BA5B0040D1AB /* UITableViewMockHelper.m in Sources */,
 				F9B09C1919D41D520064732A /* IOTableViewControllerSpec.m in Sources */,
 				F9B09C1419D413270064732A /* IOTableViewHeaderFooterView.m in Sources */,
 				F9B09C2319D41DA40064732A /* IOTableViewHeaderFooterViewModelSpec.m in Sources */,
